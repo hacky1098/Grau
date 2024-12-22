@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loadCheckoutDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const item = urlParams.get('item');
+            const price = urlParams.get('price');
+
+            document.getElementById('itemName').textContent = item;
+            document.getElementById('itemPrice').textContent = `$${price}`;
+        }
+
+        // Function to generate the receipt and download it as a text file
+        function generateReceipt() {
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const contact = document.getElementById('contact').value;
+            const item = document.getElementById('itemName').textContent;
+            const price = document.getElementById('itemPrice').textContent.replace('$', '');  // Remove the dollar sign
+
+            const orderDetails = `
+                Receipt for Order:
+                -------------------------
+                Name: ${name}
+                Address: ${address}
+                Contact: ${contact}
+                Item: ${item}
+                Price: $${price}
+
+                Thank you for your order from Burnok Petshop!
+            `;
+
+            // Create a Blob and download it as a file
+            const blob = new Blob([orderDetails], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'order_receipt.txt';  // File name for the download
+            link.click();
+        }
+
+        // Handle form submission to generate the receipt
+        function placeOrder(event) {
+            event.preventDefault();  // Prevent the form from submitting traditionally
+            generateReceipt();  // Call the function to generate the receipt
+            alert("Your order has been placed. The receipt is ready for download.");
+        }
+
+        window.onload = loadCheckoutDetails;
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://i.imgur.com/ZlSs1OR.jpeg" alt="Burnok Petshop Logo" class="logo">
+        <h1>Burnok Petshop</h1>
+        <nav>
+            <a href="main_index.html">Home</a>
+            <div class="dropdown">
+                <a href="#">Categories</a>
+                <div class="dropdown-content">
+                    <a href="cats.html">Cats</a>
+                    <a href="dogs.html">Dogs</a>
+                    <a href="catfood.html">Cat Food</a>
+                    <a href="dogfood.html">Dog Foood</a>
+                    <a href="pettoy.html">Pet toy</a>
+                </div>
+            </div>
+            <a href="about.html">About</a>
+            <a href="login.html" id="logoutLink">Logout</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Checkout</h2>
+        <p><strong>Item:</strong> <span id="itemName"></span></p>
+        <p><strong>Price:</strong> <span id="itemPrice"></span></p>
+
+        <form onsubmit="placeOrder(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="contact">Contact Number (Email for receipt):</label>
+            <input type="email" id="contact" name="contact" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Burnok Petshop. All rights reserved.</p>
+    </footer>
+</body>
+</html>

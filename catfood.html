@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat food for Sale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="C:\Users\ADMIN\Desktop\project\picture\DALL·E_2024-10-14_06.13.21_-_A_clean_and_modern_logo_design_for_a_pet_shop_named_'Burnok_Petshop',_featuring_a_playful_combination_of_a_dog_and_cat_silhouette,_with_soft_curves_an[1].webp" alt="Burnok Petshop Logo" class="logo">
+        <h1>Burnok Petshop</h1>
+        <nav>
+            <a href="main_index.html">Home</a>
+            <div class="dropdown">
+                <a href="#">Categories</a>
+                <div class="dropdown-content">
+                    <a href="cats.html">Cats</a>
+                    <a href="dogs.html">Dogs</a>
+                    <a href="catfood.html">Cat Food</a>
+                    <a href="dogfood.html">Dog Foood</a>
+                    <a href="pettoy.html">Pet toy</a>
+                </div>
+            </div>
+            <a href="about.html">About</a>
+            <a href="login.html" id="logoutLink">Logout</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Our Cat food</h2>
+        <div class="product">
+            <img src="picture/cuties-catz-tuna-flavor-22kg-cat-dry-food (1).jpg" alt="Cuties Catz Tuna Flavor 22kg Cat Dry Food">
+            <h3>Cuties Catz Tuna Flavor 22kg Cat Dry Food</h3>
+            <p>Price: $90</p>
+            <a href="checkout.html?item=Cuties%20Catz%20tuna%20flavor&price=90" class="buy-button">Buy</a>
+        </div>
+
+        <div class="product">
+            <img src="C:\Users\ADMIN\Desktop\project\picture\orijen-original-cat-dry-food.jpg" alt="Orijen Original Cat Dry Food">
+            <h3>Orijen Original Cat Dry Food</h3>
+            <p>Price: $60</p>
+            <a href="checkout.html?item=Orijen%20Original%20Cat%20Dry%20Food&price=60" class="buy-button">Buy</a>
+        </div>
+
+        <div class="product">
+            <img src="C:\Users\ADMIN\Desktop\project\picture\cuties-catz-seafood-flavor-22kg-cat-dry-food.jpg" alt="Cuties Catz Seafood Flavor 22kg Cat Dry Food">
+            <h3>Cuties Catz Seafood Flavor 22kg Cat Dry Food</h3>
+            <p>Price: $200</p>
+            <a href="checkout.html?item=Cuties%20Catz%20Seafood%20Flavor%20Cat%20Food&price=200" class="buy-button">Buy</a>
+        </div>
+
+        <div class="product">
+            <img src="C:\Users\ADMIN\Desktop\project\picture\brit-premium-by-nature-adult-salmon-8kg-cat-dry-food.jpg" alt="Brit Premium by Nature Adult Salmon 8kg Cat Dry Food">
+            <h3>Brit Premium by Nature Adult Salmon 8kg Cat Dry Food</h3>
+            <p>Price: $200</p>
+            <a href="checkout.html?item=Brit%20Premium%20by%20Nature%20Adult%20Salmon%20Dry%20Food&price=200" class="buy-button">Buy</a>
+        </div>
+
+        <div class="product">
+            <img src="C:\Users\ADMIN\Desktop\project\picture\brit-premium-by-nature-adult-salmon-8kg-cat-dry-food.jpg" alt="Brit Premium by Nature Adult Salmon 8kg Cat Dry Food">
+            <h3>Brit Premium by Nature Adult Salmon 8kg Cat Dry Food</h3>
+            <p>Price: $200</p>
+            <a href="checkout.html?item=Brit%20Premium%20by%20Nature%20Adult%20Salmon%20Dry%20Food&price=200" class="buy-button">Buy</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Burnok Petshop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSuccessMessage() {
+            alert("Your message has been sent successfully!");
+        }
+
+        function validateForm(form) {
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+
+            if (!name || !email || !message) {
+                alert("All fields are required!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

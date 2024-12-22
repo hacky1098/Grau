@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: normal;
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #388E3C;  /* Darker green for title */
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #388E3C;  /* Darker green button */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2C6B2F; /* Darker green on hover */
+        }
+
+        .signin {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signin a {
+            color: #388E3C;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .signin a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            label, input, textarea, select {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <!-- Use an actual image URL here -->
+            <img src="https://i.imgur.com/yFAXkTC.jpeg" alt="Burnok Petshop Logo">
+        </div>
+
+        <h1>Sign Up</h1>
+
+        <form id="signupForm">
+            <!-- First Name -->
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <!-- Last Name -->
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <!-- Username -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Contact Number -->
+            <label for="contact-number">Contact Number</label>
+            <input type="tel" id="contact-number" name="contact-number" pattern="\d{10}" required>
+
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Confirm Password -->
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="signin">
+            <p>Already have an account? <a href="login.html">Sign in</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const contactNumber = document.getElementById('contact-number').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Save user data in localStorage
+            const user = {
+                firstName,
+                lastName,
+                username,
+                email,
+                contactNumber,
+                password
+            };
+
+            localStorage.setItem('user', JSON.stringify(user));
+
+            alert('Registration successful! Redirecting to Login page.');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

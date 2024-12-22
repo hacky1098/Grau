@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burnok Petshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Snow Effect -->
+<script src="https://cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js" type="text/javascript"></script>
+
+<audio autoplay loop>
+    <source src="https://h.top4top.io/m_32777646r1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+    <header>
+        <div class="header-content">
+            <img src="C:\Users\ADMIN\Desktop\project\picture\DALL·E_2024-10-14_06.13.21_-_A_clean_and_modern_logo_design_for_a_pet_shop_named_'Burnok_Petshop',_featuring_a_playful_combination_of_a_dog_and_cat_silhouette,_with_soft_curves_an[1].webp" alt="Burnok Petshop Logo" class="logo">
+            <h1>Burnok Petshop</h1>
+        </div>
+        <nav>
+            <a href="main_index.html">Home</a>
+            <div class="dropdown">
+                <a href="#">Categories</a>
+                <div class="dropdown-content">
+                    <a href="cats.html">Cats</a>
+                    <a href="dogs.html">Dogs</a>
+                    <a href="catfood.html">Cat Food</a>
+                    <a href="dogfood.html">Dog Foood</a>
+                    <a href="pettoy.html">Pet toy</a>
+                 </div>
+            </div>
+            <a href="about.html">About</a>
+            <a href="login.html" id="logoutLink">Logout</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Welcome to Burnok Petshop!</h2>
+        <p>Explore our wide range of pet products and services.</p>
+
+        <div class="featured-products">
+            <h3>Featured Products</h3>
+            <div class="product">
+                <img src="C:\Users\ADMIN\Desktop\project\picture\13ef6a8b9fead1c40e520542e8960b3f.jpg" alt="Persian Cat">
+                <h4>Persian Cat</h4>
+                <p>Price: $500</p>
+                <a href="checkout.html?item=Persian%20Cat&price=500" class="buy-button">Buy</a>
+            </div>
+            <div class="product">
+                <img src="C:\Users\ADMIN\Desktop\project\picture\images_(2)[1].jpeg" alt="Golden Retriever">
+                <h4>Golden Retriever</h4>
+                <p>Price: $700</p>
+                <a href="checkout.html?item=Golden%20Retriever&price=700" class="buy-button">Buy</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Burnok Petshop. All rights reserved.</p>
+    </footer>
+    <script>
+        // Check if the user is logged in (using localStorage for demo purposes)
+        const isLoggedIn = localStorage.getItem('loggedIn');
+
+        // Handle the Home link behavior based on login status
+        const homeLink = document.querySelector('a[href="main_index.html"]');
+        if (!isLoggedIn) {
+            // If not logged in, clicking Home redirects to the login page
+            homeLink.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default action of the link
+                window.location.href = 'login.html'; // Redirect to login page
+            });
+        }
+
+        // Logout functionality
+        document.getElementById('logoutLink').addEventListener('click', function() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'login.html'; // Redirect to login page after logout
+        });
+    </script>
+ 
+</body>
+</html>

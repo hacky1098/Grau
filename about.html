@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Burnok Petshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="C:\Users\ADMIN\Desktop\project\picture\DALL·E_2024-10-14_06.13.21_-_A_clean_and_modern_logo_design_for_a_pet_shop_named_'Burnok_Petshop',_featuring_a_playful_combination_of_a_dog_and_cat_silhouette,_with_soft_curves_an[1].webp" alt="Burnok Petshop Logo" class="logo">
+        <h1>Burnok Petshop</h1>
+        <nav>
+            <a href="main_index.html">Home</a>
+            <div class="dropdown">
+                <a href="#">Categories</a>
+                <div class="dropdown-content">
+                    <a href="cats.html">Cats</a>
+                    <a href="dogs.html">Dogs</a>
+                    <a href="catfood.html">Cat Food</a>
+                    <a href="dogfood.html">Dog Foood</a>
+                    <a href="pettoy.html">Pet toy</a>
+            </div>
+            <a href="about.html" class="active">About</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <h2>About Us</h2>
+        <img src="C:\Users\ADMIN\Desktop\project\picture\logooo.jpeg" alt="logo" class="logo"
+        <div class="about-content">
+            <h3>Wide Range of Pet Products</h3>
+            <p>We offer a comprehensive range of products for dogs, cats, birds, fish, and small animals. From food and treats to toys and accessories, we have everything your pet needs to stay happy and healthy.</p>
+
+            <h3>Pet Grooming Services</h3>
+            <p>Our grooming services include bathing, haircuts, nail trimming, and more. We use only the best products to ensure your pet's coat and skin stay in top condition.</p>
+
+            <h3>Veterinary Care</h3>
+            <p>We provide access to experienced veterinarians who offer health check-ups, vaccinations, and other medical services to keep your pet healthy and safe.</p>
+
+            <h3>Pet Adoption Assistance</h3>
+            <p>If you're looking to adopt a new pet, we can help! We work with local shelters to find loving homes for cats, dogs, and other small animals in need.</p>
+
+            <h3>Customer Support</h3>
+            <p>Our customer support team is available to answer your questions, offer pet care advice, and help with any issues you might have regarding our products or services.</p>
+
+            <h3>Online Shopping</h3>
+            <p>Enjoy the convenience of online shopping with fast delivery to your doorstep. Browse our product categories, add items to your cart, and check out securely.</p>
+
+            <h3>Discounts and Loyalty Program</h3>
+            <p>Join our loyalty program to earn points on every purchase and enjoy exclusive discounts and offers. Save more on your favorite pet products.</p>
+        </div>
+        <div class="contact-us">
+    <button class="contact-button" onclick="window.location.href='contact.html'">Contact Us</button>
+</div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Burnok Petshop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSuccessMessage() {
+            alert("Your message has been sent successfully!");
+        }
+
+        function validateForm(form) {
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+
+            if (!name || !email || !message) {
+                alert("All fields are required!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
